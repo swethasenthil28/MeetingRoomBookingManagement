@@ -6,6 +6,7 @@ import jakarta.persistence.Id;
 import jakarta.persistence.OneToMany;
 import org.ford.meetingroombookingsystem.booking.Booking;
 import org.ford.meetingroombookingsystem.meetingRoom.MeetingRoom;
+import org.springframework.stereotype.Service;
 
 import java.util.ArrayList;
 import java.util.List;
