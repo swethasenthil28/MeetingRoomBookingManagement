@@ -21,6 +21,7 @@ public class MeetingRoom {
     private String type;//enumerated datatype
     private Boolean isAvailabile;
     private String eventDescription;
+    private Double costOfRoom;
 
 
     @OneToMany
@@ -103,5 +104,13 @@ public class MeetingRoom {
 
     public void setBookings(List<Booking> bookings) {
         this.bookings = bookings;
+    }
+
+    public Double getCostOfRoom() {
+        return costOfRoom;
+    }
+
+    public void setCostOfRoom(Double costOfRoom) {
+        this.costOfRoom = costOfRoom;
     }
 }
