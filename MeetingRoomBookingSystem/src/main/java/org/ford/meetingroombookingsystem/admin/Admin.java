@@ -17,7 +17,7 @@ public class Admin {
     private String name;
     private String email;
     private String password;
-    // private Boolean status;
+
     @OneToMany
     private List<BookingUser> users = new ArrayList<>();
     @OneToMany
@@ -66,5 +66,29 @@ public class Admin {
 
     public void setPassword(String password) {
         this.password = password;
+    }
+
+    public List<BookingUser> getUsers() {
+        return users;
+    }
+
+    public void setUsers(List<BookingUser> users) {
+        this.users = users;
+    }
+
+    public List<MeetingRoom> getMeetingRooms() {
+        return meetingRooms;
+    }
+
+    public void setMeetingRooms(List<MeetingRoom> meetingRooms) {
+        this.meetingRooms = meetingRooms;
+    }
+
+    public List<Booking> getBookings() {
+        return bookings;
+    }
+
+    public void setBookings(List<Booking> bookings) {
+        this.bookings = bookings;
     }
 }

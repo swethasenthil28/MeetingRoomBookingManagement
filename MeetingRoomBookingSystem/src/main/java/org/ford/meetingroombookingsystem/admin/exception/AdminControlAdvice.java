@@ -1,5 +1,6 @@
-package org.ford.meetingroombookingsystem.admin;
+package org.ford.meetingroombookingsystem.admin.exception;
 
+import org.ford.meetingroombookingsystem.admin.exception.AdminException;
 import org.springframework.http.HttpStatus;
 import org.springframework.http.ResponseEntity;
 import org.springframework.web.bind.annotation.ExceptionHandler;

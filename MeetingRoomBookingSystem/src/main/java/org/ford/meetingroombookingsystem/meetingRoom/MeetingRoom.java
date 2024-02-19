@@ -22,7 +22,7 @@ public class MeetingRoom {
     private Boolean isAvailabile;
     private String eventDescription;
 
-    //@JsonIgnore
+
     @OneToMany
     private List<Booking> bookings=new ArrayList<>();
 
