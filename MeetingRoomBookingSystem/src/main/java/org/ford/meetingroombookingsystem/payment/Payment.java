@@ -1,6 +1,7 @@
 package org.ford.meetingroombookingsystem.payment;
 
 import jakarta.persistence.Entity;
+import jakarta.persistence.GeneratedValue;
 import jakarta.persistence.Id;
 import jakarta.persistence.OneToOne;
 import org.ford.meetingroombookingsystem.bookingUser.BookingUser;
@@ -8,9 +9,11 @@ import org.ford.meetingroombookingsystem.bookingUser.BookingUser;
 public class Payment {
 
     @Id
+    @GeneratedValue
     private Integer paymentId;
     private Double amount;
     private String paymentType;
+    private Boolean status;
 
     @OneToOne
     private BookingUser bookingUser;
@@ -45,6 +48,22 @@ public class Payment {
 
     public void setPaymentType(String paymentType) {
         this.paymentType = paymentType;
+    }
+
+    public Integer getPaymentId() {
+        return paymentId;
+    }
+
+    public void setPaymentId(Integer paymentId) {
+        this.paymentId = paymentId;
+    }
+
+    public Boolean getStatus() {
+        return status;
+    }
+
+    public void setStatus(Boolean status) {
+        this.status = status;
     }
 
     public Payment(Integer paymentId, Double amount) {

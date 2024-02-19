@@ -2,7 +2,9 @@ package org.ford.meetingroombookingsystem.admin;
 
 import org.ford.meetingroombookingsystem.admin.exception.AdminException;
 import org.ford.meetingroombookingsystem.bookingUser.BookingUser;
+import org.ford.meetingroombookingsystem.bookingUser.PaymentRepository;
 import org.ford.meetingroombookingsystem.meetingRoom.MeetingRoom;
+import org.ford.meetingroombookingsystem.payment.Payment;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
 
@@ -16,6 +18,8 @@ public class AdminServiceImplementation implements AdminService{
     private  UserRepository userRepository;
     @Autowired
     private MeetingRoomRepository meetingRoomRepository;
+    @Autowired
+    private PaymentRepository pamymentRepo;
 
     @Override
     public Admin createNewAdmin(Admin admin) {
@@ -39,5 +43,10 @@ public class AdminServiceImplementation implements AdminService{
     @Override
     public MeetingRoom createNewMeetingRoom(MeetingRoom meetingRoom) {
         return meetingRoomRepository.save(meetingRoom);
+    }
+
+    @Override
+    public Payment addPayment(Payment payment) {
+        return pamymentRepo.save(payment);
     }
 }

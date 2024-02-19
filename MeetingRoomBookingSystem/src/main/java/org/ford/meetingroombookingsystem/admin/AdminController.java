@@ -4,6 +4,7 @@ package org.ford.meetingroombookingsystem.admin;
 import org.ford.meetingroombookingsystem.admin.exception.AdminException;
 import org.ford.meetingroombookingsystem.bookingUser.BookingUser;
 import org.ford.meetingroombookingsystem.meetingRoom.MeetingRoom;
+import org.ford.meetingroombookingsystem.payment.Payment;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.web.bind.annotation.*;
 
@@ -29,6 +30,11 @@ public class AdminController {
     @PostMapping("newMeetingRoom")
     public MeetingRoom createNewMeetingRoom(@RequestBody MeetingRoom meetingRoom){
         return adminService.createNewMeetingRoom(meetingRoom);
+    }
+
+    @PostMapping("payment")
+    public Payment payment(@RequestBody Payment payment){
+        return adminService.addPayment(payment);
     }
 
 
